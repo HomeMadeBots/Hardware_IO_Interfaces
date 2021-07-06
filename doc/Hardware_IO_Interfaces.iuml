@@ -1,0 +1,42 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+hide circle
+
+skinparam class {
+  BorderColor Black
+  BackgroundColor<<Client_Server_Interface>> LightGreen
+  BackgroundColor<<Enumerated_Data_Type>> LightBlue
+}
+
+enum E_IO_Level <<Enumerated_Data_Type>>
+{
+  Allows to model a data representing the hardware
+  level of a pin.
+  __
+  IO_LEVEL_HIGH
+  IO_LEVEL_LOW
+}
+
+interface Discrete_Input <<Client_Server_Interface>>
+{
+  Gathers operations allowing to manage a
+ digital hardware input.
+  __
+  {abstract} +Get_Level( OUT level:E_IO_Level )
+
+}
+
+interface Discrete_Output <<Client_Server_Interface>>
+{
+  Gathers operations allowing to manage a
+  digital hardware output.
+  __
+  {abstract} +Set_Level( IN level:E_IO_Level )
+
+}
+
+E_IO_Level <.. Discrete_Input : use
+E_IO_Level <.. Discrete_Output : use
+
+@enduml
