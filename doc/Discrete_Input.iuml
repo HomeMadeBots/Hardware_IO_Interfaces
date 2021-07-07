@@ -1,0 +1,12 @@
+@startuml
+
+interface Discrete_Input <<Client_Server_Interface>>
+{
+  Gathers operations allowing to manage a
+  digital hardware input.
+  --
+  {abstract} +Get_Level( OUT level:E_IO_Level )
+
+}
+
+@enduml

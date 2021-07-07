@@ -1,40 +1,10 @@
 @startuml
-skinparam classAttributeIconSize 0
-hide empty members
-hide circle
 
-skinparam class {
-  BorderColor Black
-  BackgroundColor<<Client_Server_Interface>> LightGreen
-  BackgroundColor<<Enumerated_Data_Type>> LightBlue
-}
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.plantuml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Hardware_IO_Interfaces/main/doc/E_IO_Level.iuml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Hardware_IO_Interfaces/main/doc/Discrete_Input.iuml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Hardware_IO_Interfaces/main/doc/Discrete_Output.iuml
 
-enum E_IO_Level <<Enumerated_Data_Type>>
-{
-  Allows to model a data representing the hardware
-  level of a pin.
-  __
-  IO_LEVEL_HIGH
-  IO_LEVEL_LOW
-}
-
-interface Discrete_Input <<Client_Server_Interface>>
-{
-  Gathers operations allowing to manage a
- digital hardware input.
-  __
-  {abstract} +Get_Level( OUT level:E_IO_Level )
-
-}
-
-interface Discrete_Output <<Client_Server_Interface>>
-{
-  Gathers operations allowing to manage a
-  digital hardware output.
-  __
-  {abstract} +Set_Level( IN level:E_IO_Level )
-
-}
 
 E_IO_Level <.. Discrete_Input : use
 E_IO_Level <.. Discrete_Output : use

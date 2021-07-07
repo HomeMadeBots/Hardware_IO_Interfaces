@@ -1,0 +1,12 @@
+@startuml
+
+enum E_IO_Level <<Enumerated_Data_Type>>
+{
+  Allows to model a data representing the hardware
+  level of a pin.
+  --
+  IO_LEVEL_HIGH
+  IO_LEVEL_LOW
+}
+
+@enduml
