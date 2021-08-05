@@ -1,0 +1,15 @@
+@startuml
+
+class T_Voltage_5 <<Physical_Data_Type>>
+{
+  Allows to model a data representing a voltage with a
+  resolution of 0.004887 V.
+  (Typically used to represent a data from 0 to 5 V.)
+  --
+  Unit : V
+  Base : uint16
+  Resolution : 0.004887
+  Offset : 0
+}
+
+@enduml
